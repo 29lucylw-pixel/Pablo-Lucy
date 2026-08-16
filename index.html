@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Nuestra historia ❤️</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -15,35 +20,74 @@
 
     header {
       text-align: center;
-      padding: 45px 20px 30px;
+      padding: 35px 20px 20px;
     }
 
     h1 {
-      font-size: 36px;
+      font-size: 34px;
       margin-bottom: 8px;
     }
 
     .subtitle {
-      font-size: 16px;
-      opacity: 0.75;
+      opacity: .7;
+    }
+
+    .login {
+      max-width: 430px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      margin: 7px 0;
+      border: 1px solid #eadce1;
+      border-radius: 12px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 18px;
+      margin: 5px;
+      background: #e88ca8;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button.secondary {
+      background: #eadde2;
+      color: #4a3039;
+    }
+
+    .hidden {
+      display: none;
     }
 
     .counter {
       text-align: center;
-      margin: 20px auto;
-      padding: 22px;
+      margin: 15px auto;
+      padding: 20px;
       max-width: 500px;
       background: white;
       border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    .counter h2 {
-      margin: 0 0 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.06);
     }
 
     .number {
-      font-size: 28px;
+      font-size: 25px;
       font-weight: bold;
     }
 
@@ -52,39 +96,54 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
       max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
+      margin: 25px auto;
+      padding: 15px;
     }
 
     .card {
       background: white;
-      padding: 25px 15px;
+      padding: 25px 12px;
       border-radius: 20px;
       text-align: center;
       font-size: 18px;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
     }
 
-    .card:hover {
-      transform: translateY(-2px);
+    .section {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    .memory {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .memory img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-top: 10px;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      opacity: 0.6;
+      opacity: .6;
     }
 
     @media (max-width: 500px) {
       h1 {
-        font-size: 30px;
+        font-size: 29px;
       }
 
       .menu {
         grid-template-columns: 1fr;
-        padding: 15px;
       }
     }
   </style>
@@ -92,116 +151,683 @@
 
 <body>
 
-  <header>
-    <h1>♡ Nuestra historia ♡</h1>
-    <div class="subtitle">
-      Desde el 4 de mayo de 2026
-    </div>
-  </header>
+<header>
+  <h1>♡ Nuestra historia ♡</h1>
+  <div class="subtitle">Desde el 4 de mayo de 2026</div>
+</header>
+
+
+<!-- LOGIN -->
+
+<div id="loginBox" class="login">
+
+  <h2>❤️ Entrar</h2>
+
+  <input
+    id="email"
+    type="email"
+    placeholder="Tu correo electrónico"
+  >
+
+  <input
+    id="password"
+    type="password"
+    placeholder="Contraseña"
+  >
+
+  <button id="loginButton">
+    Entrar
+  </button>
+
+  <button id="registerButton" class="secondary">
+    Crear cuenta
+  </button>
+
+  <p id="loginMessage"></p>
+
+</div>
+
+
+<!-- WEB -->
+
+<div id="app" class="hidden">
+
+  <div style="text-align:center;">
+    <button id="logoutButton" class="secondary">
+      Cerrar sesión
+    </button>
+  </div>
+
 
   <section class="counter">
+
     <h2>❤️ Llevamos juntos</h2>
-    <div class="number" id="together">
+
+    <div
+      class="number"
+      id="together"
+    >
       Calculando...
     </div>
+
   </section>
 
+
   <section class="counter">
+
     <h2>✈️ Volvemos a vernos</h2>
-    <div class="number" id="next-meeting">
+
+    <div
+      class="number"
+      id="nextMeeting"
+    >
       Calculando...
     </div>
+
   </section>
+
 
   <div class="menu">
 
-    <a class="card" href="#">
+    <div class="card">
       📸<br>
       Fotos y recuerdos
-    </a>
+    </div>
 
-    <a class="card" href="#">
+    <div class="card">
       💌<br>
       Cartas
-    </a>
+    </div>
 
-    <a class="card" href="#">
+    <div class="card">
       ✈️<br>
       Viajes
-    </a>
+    </div>
 
-    <a class="card" href="#">
+    <div class="card">
       🎵<br>
       Nuestras canciones
-    </a>
+    </div>
 
-    <a class="card" href="#">
+    <div class="card">
       📅<br>
       Fechas importantes
-    </a>
+    </div>
 
-    <a class="card" href="#">
+    <div class="card">
       📝<br>
       Cosas que queremos hacer
-    </a>
+    </div>
 
   </div>
 
-  <footer>
-    Hecho con ❤️ para nosotros
-  </footer>
 
-  <script>
+  <!-- RECUERDOS -->
 
-    const startDate = new Date("2026-05-04T00:00:00");
-    const meetingDate = new Date("2026-09-11T00:00:00");
+  <section class="section">
 
-    function updateCounters() {
+    <h2>📸 Fotos y recuerdos</h2>
 
-      const now = new Date();
+    <button id="showFormButton">
+      ＋ Añadir recuerdo
+    </button>
 
-      const togetherMilliseconds = now - startDate;
 
-      const togetherDays =
-        Math.floor(togetherMilliseconds / (1000 * 60 * 60 * 24));
+    <div id="memoryForm" class="login hidden">
 
-      document.getElementById("together").textContent =
-        togetherDays + " días ❤️";
+      <input
+        id="memoryTitle"
+        type="text"
+        placeholder="Título del recuerdo"
+      >
 
-      const remainingMilliseconds = meetingDate - now;
+      <input
+        id="memoryDate"
+        type="date"
+      >
 
-      if (remainingMilliseconds > 0) {
+      <textarea
+        id="memoryText"
+        placeholder="Escribe vuestro recuerdo..."
+      ></textarea>
 
-        const days =
-          Math.floor(remainingMilliseconds / (1000 * 60 * 60 * 24));
+      <input
+        id="memoryPhoto"
+        type="file"
+        accept="image/*"
+      >
 
-        const hours =
-          Math.floor(
-            (remainingMilliseconds / (1000 * 60 * 60)) % 24
-          );
+      <button id="saveMemoryButton">
+        ❤️ Guardar recuerdo
+      </button>
 
-        const minutes =
-          Math.floor(
-            (remainingMilliseconds / (1000 * 60)) % 60
-          );
+      <p id="memoryMessage"></p>
 
-        document.getElementById("next-meeting").textContent =
-          days + " días · " +
-          hours + " h · " +
-          minutes + " min ❤️";
+    </div>
 
-      } else {
 
-        document.getElementById("next-meeting").textContent =
-          "¡Ya estamos juntos! ❤️";
+    <div id="memories"></div>
+
+  </section>
+
+</div>
+
+
+<footer>
+  Hecho con ❤️ para nosotros
+</footer>
+
+
+<script type="module">
+
+  import {
+    initializeApp
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    query,
+    orderBy,
+    onSnapshot
+  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+  // FIREBASE
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyA-2uTl9PuoS7y3gSOkmiPLK5U8j19NM2s",
+
+    authDomain:
+      "para-nosotros-3e4d1.firebaseapp.com",
+
+    projectId:
+      "para-nosotros-3e4d1",
+
+    storageBucket:
+      "para-nosotros-3e4d1.firebasestorage.app",
+
+    messagingSenderId:
+      "526548738560",
+
+    appId:
+      "1:526548738560:web:a6c1bd6ce7027f3e94eee5"
+
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+
+  const auth = getAuth(app);
+
+  const db = getFirestore(app);
+
+
+  // CLOUDINARY
+
+  const cloudName = "pwakhtme";
+
+  const uploadPreset = "recuerdos";
+
+
+  // ELEMENTOS
+
+  const loginBox =
+    document.getElementById("loginBox");
+
+  const appArea =
+    document.getElementById("app");
+
+  const loginMessage =
+    document.getElementById("loginMessage");
+
+
+  // REGISTRARSE
+
+  document
+    .getElementById("registerButton")
+    .addEventListener("click", async () => {
+
+      const email =
+        document.getElementById("email").value;
+
+      const password =
+        document.getElementById("password").value;
+
+      try {
+
+        await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+        loginMessage.textContent =
+          "Cuenta creada ❤️";
+
+      } catch (error) {
+
+        loginMessage.textContent =
+          error.message;
 
       }
+
+    });
+
+
+  // INICIAR SESIÓN
+
+  document
+    .getElementById("loginButton")
+    .addEventListener("click", async () => {
+
+      const email =
+        document.getElementById("email").value;
+
+      const password =
+        document.getElementById("password").value;
+
+      try {
+
+        await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+      } catch (error) {
+
+        loginMessage.textContent =
+          error.message;
+
+      }
+
+    });
+
+
+  // CERRAR SESIÓN
+
+  document
+    .getElementById("logoutButton")
+    .addEventListener("click", () => {
+
+      signOut(auth);
+
+    });
+
+
+  // ESTADO DEL USUARIO
+
+  onAuthStateChanged(auth, user => {
+
+    if (user) {
+
+      loginBox.classList.add("hidden");
+
+      appArea.classList.remove("hidden");
+
+      loadMemories();
+
+    } else {
+
+      loginBox.classList.remove("hidden");
+
+      appArea.classList.add("hidden");
+
     }
 
-    updateCounters();
-    setInterval(updateCounters, 60000);
+  });
 
-  </script>
+
+  // CONTADORES
+
+  const startDate =
+    new Date("2026-05-04T00:00:00");
+
+  const meetingDate =
+    new Date("2026-09-11T00:00:00");
+
+
+  function updateCounters() {
+
+    const now = new Date();
+
+    const together =
+      Math.floor(
+        (now - startDate) /
+        (1000 * 60 * 60 * 24)
+      );
+
+    document.getElementById("together")
+      .textContent =
+      together + " días ❤️";
+
+
+    const remaining =
+      meetingDate - now;
+
+
+    if (remaining > 0) {
+
+      const days =
+        Math.floor(
+          remaining /
+          (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (remaining /
+          (1000 * 60 * 60)) % 24
+        );
+
+      const minutes =
+        Math.floor(
+          (remaining /
+          (1000 * 60)) % 60
+        );
+
+      document.getElementById("nextMeeting")
+        .textContent =
+        `${days} días · ${hours} h · ${minutes} min ❤️`;
+
+    } else {
+
+      document.getElementById("nextMeeting")
+        .textContent =
+        "¡Ya estamos juntos! ❤️";
+
+    }
+
+  }
+
+
+  updateCounters();
+
+  setInterval(updateCounters, 60000);
+
+
+  // MOSTRAR FORMULARIO
+
+  document
+    .getElementById("showFormButton")
+    .addEventListener("click", () => {
+
+      document
+        .getElementById("memoryForm")
+        .classList.toggle("hidden");
+
+    });
+
+
+  // SUBIR FOTO A CLOUDINARY
+
+  async function uploadPhoto(file) {
+
+    const formData =
+      new FormData();
+
+    formData.append(
+      "file",
+      file
+    );
+
+    formData.append(
+      "upload_preset",
+      uploadPreset
+    );
+
+
+    const response =
+      await fetch(
+        `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+
+
+    if (!response.ok) {
+
+      throw new Error(
+        "No se pudo subir la foto."
+      );
+
+    }
+
+
+    const data =
+      await response.json();
+
+    return data.secure_url;
+
+  }
+
+
+  // GUARDAR RECUERDO
+
+  document
+    .getElementById("saveMemoryButton")
+    .addEventListener("click", async () => {
+
+      const user = auth.currentUser;
+
+      if (!user) return;
+
+
+      const title =
+        document.getElementById("memoryTitle").value;
+
+      const date =
+        document.getElementById("memoryDate").value;
+
+      const text =
+        document.getElementById("memoryText").value;
+
+      const file =
+        document.getElementById("memoryPhoto").files[0];
+
+
+      const message =
+        document.getElementById("memoryMessage");
+
+
+      if (!title || !text) {
+
+        message.textContent =
+          "Escribe un título y un recuerdo ❤️";
+
+        return;
+
+      }
+
+
+      try {
+
+        message.textContent =
+          "Subiendo foto... 📸";
+
+
+        let photoUrl = "";
+
+
+        if (file) {
+
+          photoUrl =
+            await uploadPhoto(file);
+
+        }
+
+
+        message.textContent =
+          "Guardando recuerdo... ❤️";
+
+
+        await addDoc(
+          collection(db, "memories"),
+          {
+
+            title,
+            date,
+            text,
+            photoUrl,
+
+            author:
+              user.email,
+
+            createdAt:
+              new Date()
+
+          }
+        );
+
+
+        document
+          .getElementById("memoryTitle")
+          .value = "";
+
+        document
+          .getElementById("memoryDate")
+          .value = "";
+
+        document
+          .getElementById("memoryText")
+          .value = "";
+
+        document
+          .getElementById("memoryPhoto")
+          .value = "";
+
+
+        message.textContent =
+          "¡Recuerdo guardado! ❤️";
+
+      } catch (error) {
+
+        console.error(error);
+
+        message.textContent =
+          "Ha ocurrido un error. " +
+          error.message;
+
+      }
+
+    });
+
+
+  // MOSTRAR RECUERDOS
+
+  function loadMemories() {
+
+    const memoriesDiv =
+      document.getElementById("memories");
+
+
+    const memoriesQuery =
+      query(
+        collection(db, "memories"),
+        orderBy("createdAt", "desc")
+      );
+
+
+    onSnapshot(
+      memoriesQuery,
+      snapshot => {
+
+        memoriesDiv.innerHTML = "";
+
+
+        snapshot.forEach(doc => {
+
+          const memory =
+            doc.data();
+
+
+          const element =
+            document.createElement("div");
+
+          element.className =
+            "memory";
+
+
+          element.innerHTML = `
+
+            <h3>
+              ${escapeHtml(memory.title)}
+            </h3>
+
+            <small>
+              ${memory.date || ""}
+            </small>
+
+            <p>
+              ${escapeHtml(memory.text)}
+            </p>
+
+            ${
+              memory.photoUrl
+              ?
+              `<img
+                src="${memory.photoUrl}"
+                alt="Recuerdo"
+              >`
+              :
+              ""
+            }
+
+            <small>
+              Añadido por:
+              ${escapeHtml(memory.author || "")}
+            </small>
+
+          `;
+
+
+          memoriesDiv.appendChild(element);
+
+        });
+
+      },
+
+      error => {
+
+        console.error(error);
+
+      }
+
+    );
+
+  }
+
+
+  function escapeHtml(text) {
+
+    return String(text)
+
+      .replaceAll("&", "&amp;")
+
+      .replaceAll("<", "&lt;")
+
+      .replaceAll(">", "&gt;")
+
+      .replaceAll('"', "&quot;")
+
+      .replaceAll("'", "&#039;");
+
+  }
+
+</script>
 
 </body>
 </html>

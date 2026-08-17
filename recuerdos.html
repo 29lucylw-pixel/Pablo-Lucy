@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Fotos y recuerdos ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fff0f5, #ffe0eb);
+      color: #5a3040;
+      text-align: center;
+    }
+
+    .contenedor {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .subtitulo {
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+
+    .volver {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 22px;
+      background: white;
+      color: #d45a7a;
+      text-decoration: none;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .foto {
+      background: white;
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    }
+
+    .foto img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .foto p {
+      margin: 12px 5px 5px;
+      font-size: 15px;
+    }
+
+    .corazon {
+      font-size: 25px;
+      margin: 25px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="contenedor">
+
+    <div class="corazon">❤️ 📸 ❤️</div>
+
+    <h1>Fotos y recuerdos</h1>
+
+    <p class="subtitulo">
+      Todos nuestros momentos juntos, guardados aquí para siempre.
+    </p>
+
+    <a class="volver" href="index.html">
+      ← Volver a nuestra historia
+    </a>
+
+    <div class="galeria">
+
+      <div class="foto">
+        <img src="foto1.jpg" alt="Nuestro recuerdo">
+        <p>Nuestro primer recuerdo ❤️</p>
+      </div>
+
+      <div class="foto">
+        <img src="foto2.jpg" alt="Nuestro recuerdo">
+        <p>Un momento especial 🥰</p>
+      </div>
+
+      <div class="foto">
+        <img src="foto3.jpg" alt="Nuestro recuerdo">
+        <p>Juntos ❤️</p>
+      </div>
+
+      <div class="foto">
+        <img src="foto4.jpg" alt="Nuestro recuerdo">
+        <p>Un día para recordar ✨</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
